@@ -7,31 +7,54 @@ function getComputerChoice() {
 // console.log(getComputerChoice());
 
 
+let playerScore = 0;
+let computerScore = 0;
 
+// let computerSelection;
 
-
-
-
+let playerSelection = document.getElementById("choice").value;
 function playRound(playerSelection, computerSelection) {
+    computerSelection = getComputerChoice();
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper'){
-        return "You lose! rock loses to paper";
+        computerScore++;
+        return "You lose! rock loses to paper, player score: "+playerScore+". Computer score: "+computerScore+"." ;
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors'){
-        return "You lose! paper loses to scissors";
+        computerScore++;
+        return "You lose! paper loses to scissors, player score: "+playerScore+". Computer score: "+computerScore+".";
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock'){
-        return "You lose! scissors loses to rock";
+        computerScore++;
+        return "You lose! scissors loses to rock, player score: "+playerScore+". Computer score: "+computerScore+".";
     } else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors'){
-        return "You win! rock beats scissors";
+        playerScore++;
+        return "You win! rock beats scissors, player score: "+playerScore+". Computer score: "+computerScore+".";
     } else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock'){
-        return "You win! paper beats rock";
+        playerScore++;
+        return "You win! paper beats rock, player score: "+playerScore+". Computer score: "+computerScore+".";
     } else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper'){
-        return "You win! scissors beats paper";
+        playerScore++;
+        return "You win! scissors beats paper, player score: "+playerScore+". Computer score: "+computerScore+".";
     } else {
-        return "Draw!";
+        return "Draw!, player score: "+playerScore+". Computer score: "+computerScore+".";
     }
 }
   
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
-  console.log(computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
+//   let playerSelection;
+//   const computerSelection = getComputerChoice();
+//   console.log(computerSelection);
+//   console.log(playRound(playerSelection, computerSelection));
   
+
+function playGame(){
+    while (computerScore<5 && playerScore<5){
+        // playerSelection = prompt('enter')
+        document.getElementById("score").innerHTML = playRound(playerSelection, computerSelection);
+    }
+    if (playerScore==5){
+        return "You won the game!"
+    } else {
+        return "You lost the game!"
+    }
+}
+playGame();
+
+// console.log(playGame());
