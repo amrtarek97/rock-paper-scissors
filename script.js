@@ -3,6 +3,7 @@ function getComputerChoice() {
     const compChoice = choice[(Math.floor(Math.random()*3))];
     return compChoice;
 }
+let playerSelection = 'rock';
 
 // console.log(getComputerChoice());
 
@@ -10,9 +11,9 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-// let computerSelection;
+let computerSelection;
 
-let playerSelection = document.getElementById("choice").value;
+
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper'){
@@ -38,23 +39,30 @@ function playRound(playerSelection, computerSelection) {
     }
 }
   
-//   let playerSelection;
-//   const computerSelection = getComputerChoice();
-//   console.log(computerSelection);
-//   console.log(playRound(playerSelection, computerSelection));
-  
+// console.log(playRound(playerSelection,computerSelection));
 
-function playGame(){
-    while (computerScore<5 && playerScore<5){
-        // playerSelection = prompt('enter')
-        document.getElementById("score").innerHTML = playRound(playerSelection, computerSelection);
-    }
-    if (playerScore==5){
-        return "You won the game!"
-    } else {
-        return "You lost the game!"
+// while (computerScore<5 && playerScore<5) {
+    
+//     console.log(playRound(playerSelection,computerSelection));
+//     if (playerScore==5) {
+//         console.log("You won the whole game!");        
+//     } else if(computerScore==5){
+//         console.log("You lost the whole game");
+//     }
+    
+// }
+
+function game(){
+    while (computerScore<5 && playerScore<5) {
+    
+        console.log(playRound(playerSelection,computerSelection));
+        if (playerScore==5) {
+            console.log("You won the whole game!");        
+        } else if(computerScore==5){
+            console.log("You lost the whole game");
+        }
+        
     }
 }
-playGame();
 
-// console.log(playGame());
+game();
