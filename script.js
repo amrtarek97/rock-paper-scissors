@@ -46,9 +46,9 @@ function gameFromFive(){
     
         console.log(playRound(playerSelection,computerSelection));
         if (playerScore==5) {
-            console.log("You won the whole game!");        
+            return "You win!"        
         } else if(computerScore==5){
-            console.log("You lost the whole game");
+            return "You lose!"
         }
         
     }
@@ -60,10 +60,12 @@ function fiveRoundGame (){
 
     }
     if(playerScore>computerScore){
-        return console.log("You win!");
+        return "You win!"
     } else{
-        return console.log("You lose!");
+        return "You lose!"
     }
 }
 
 // fiveRoundGame();
+
+console.log(gameFromFive());
