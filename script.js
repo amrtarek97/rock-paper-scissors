@@ -62,12 +62,14 @@ function fiveRoundGame (){
 
     }
     if(playerScore>computerScore){
-        return "You win!"
-    } else{
-        return "You lose!"
+        return "You win!";
+    } else if (computerScore>playerScore) {
+        return "You lose!";
+    } else {
+        return "Draw!";
     }
 }
 
 // fiveRoundGame();
 
-console.log(gameFromFive());
+console.log(fiveRoundGame());
