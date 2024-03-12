@@ -3,7 +3,7 @@ function getComputerChoice() {
     const compChoice = choice[(Math.floor(Math.random()*3))];
     return compChoice;
 }
-let playerSelection = 'rock';
+let playerSelection;
 
 // console.log(getComputerChoice());
 
@@ -16,6 +16,8 @@ let computerSelection;
 
 function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
+    playerSelection = prompt("pick one: rock, paper, scissors: ");
+
     if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper'){
         computerScore++;
         return "You lose! rock loses to paper, player score: "+playerScore+". Computer score: "+computerScore+"." ;
