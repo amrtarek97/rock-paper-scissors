@@ -39,20 +39,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
   
-// console.log(playRound(playerSelection,computerSelection));
 
-// while (computerScore<5 && playerScore<5) {
-    
-//     console.log(playRound(playerSelection,computerSelection));
-//     if (playerScore==5) {
-//         console.log("You won the whole game!");        
-//     } else if(computerScore==5){
-//         console.log("You lost the whole game");
-//     }
-    
-// }
 
-function game(){
+function gameFromFive(){
     while (computerScore<5 && playerScore<5) {
     
         console.log(playRound(playerSelection,computerSelection));
@@ -65,4 +54,16 @@ function game(){
     }
 }
 
-game();
+function fiveRoundGame (){
+    for (let index = 0; index < 5; index++) {
+       console.log(playRound(playerSelection,computerSelection));
+
+    }
+    if(playerScore>computerScore){
+        return console.log("You win!");
+    } else{
+        return console.log("You lose!");
+    }
+}
+
+// fiveRoundGame();
