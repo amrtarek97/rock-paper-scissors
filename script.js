@@ -3,6 +3,37 @@ function getComputerChoice() {
     const compChoice = choice[(Math.floor(Math.random()*3))];
     return compChoice;
 }
+
+// getting player choice from a button
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+// trying event delegation using the parent (see odin dom lesson assignment)
+
+let choices = document.querySelector('.choices');
+choices.addEventListener('click', (e) => {
+    let target = e.target;
+
+    switch(target.id){
+        case 'rock':
+            playerSelection = 'rock';
+            break;
+        case 'paper':
+            playerSelection = 'paper';
+            break;
+        case 'scissors':
+            playerSelection = 'scissors';
+            break;
+    }
+    console.log(playerSelection);
+});
+
+
+
+
+
+
+// end of button choices section
 let playerSelection;
 
 // console.log(getComputerChoice());
@@ -73,3 +104,4 @@ function fiveRoundGame (){
 // fiveRoundGame();
 
 // console.log(fiveRoundGame());
+
