@@ -54,11 +54,7 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = computerScore;
 
     return (
-      "You lose! rock loses to paper, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "You lose! rock loses to paper."
     );
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
     computerScore++;
@@ -66,11 +62,7 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = computerScore;
 
     return (
-      "You lose! paper loses to scissors, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "You lose! paper loses to scissors."
     );
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
     computerScore++;
@@ -78,11 +70,7 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = computerScore;
 
     return (
-      "You lose! scissors loses to rock, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "You lose! scissors loses to rock."
     );
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
     playerScore++;
@@ -90,11 +78,7 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = computerScore;
 
     return (
-      "You win! rock beats scissors, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "You win! rock beats scissors."
     );
   } else if (playerSelection == "paper" && computerSelection == "rock") {
     playerScore++;
@@ -102,11 +86,7 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = computerScore;
 
     return (
-      "You win! paper beats rock, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "You win! paper beats rock."
     );
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
     playerScore++;
@@ -114,22 +94,14 @@ function playRound(playerSelection, computerSelection) {
     cScore.textContent = computerScore;
 
     return (
-      "You win! scissors beats paper, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "You win! scissors beats paper"
     );
   } else {
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
 
     return (
-      "Draw!, player score: " +
-      playerScore +
-      ". Computer score: " +
-      computerScore +
-      "."
+      "Draw!"
     );
   }
 }
@@ -139,19 +111,19 @@ function playRound(playerSelection, computerSelection) {
 let startGameBtnRock = document.querySelector("#rock");
 
 startGameBtnRock.addEventListener("click", () => {
-  console.log(playRound(playerSelection, computerSelection));
+    result.textContent = playRound(playerSelection, computerSelection);
 });
 
 let startGameBtnPaper = document.querySelector("#paper");
 
 startGameBtnPaper.addEventListener("click", () => {
-  console.log(playRound(playerSelection, computerSelection));
+    result.textContent = playRound(playerSelection, computerSelection);
 });
 
 let startGameBtnScissors = document.querySelector("#scissors");
 
 startGameBtnScissors.addEventListener("click", () => {
-  console.log(playRound(playerSelection, computerSelection));
+    result.textContent = playRound(playerSelection, computerSelection);
 });
 
 // 2 event listeners on same thing
@@ -191,3 +163,5 @@ function fiveRoundGame() {
 // fiveRoundGame();
 
 // console.log(fiveRoundGame());
+
+let result = document.querySelector('.result');
