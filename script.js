@@ -53,56 +53,91 @@ function playRound(playerSelection, computerSelection) {
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
 
-    return (
-      "You lose! rock loses to paper."
-    );
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
+
+    return "You lose! rock loses to paper.";
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
     computerScore++;
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
 
-    return (
-      "You lose! paper loses to scissors."
-    );
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
+
+    return "You lose! paper loses to scissors.";
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
     computerScore++;
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
 
-    return (
-      "You lose! scissors loses to rock."
-    );
+    return "You lose! scissors loses to rock.";
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
     playerScore++;
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
 
-    return (
-      "You win! rock beats scissors."
-    );
+    return "You win! rock beats scissors.";
   } else if (playerSelection == "paper" && computerSelection == "rock") {
     playerScore++;
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
-
-    return (
-      "You win! paper beats rock."
-    );
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
+    return "You win! paper beats rock.";
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
     playerScore++;
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
-
-    return (
-      "You win! scissors beats paper"
-    );
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
+    return "You win! scissors beats paper";
   } else {
     pScore.textContent = playerScore;
     cScore.textContent = computerScore;
+    if (playerScore == 5) {
+      modalText.textContent = "You win!";
+      modal.style.display = "block";
+    } else if (computerScore == 5) {
+      modalText.textContent = "You lose!";
+      modal.style.display = "block";
+    }
 
-    return (
-      "Draw!"
-    );
+    return "Draw!";
   }
 }
 
@@ -111,19 +146,19 @@ function playRound(playerSelection, computerSelection) {
 let startGameBtnRock = document.querySelector("#rock");
 
 startGameBtnRock.addEventListener("click", () => {
-    result.textContent = playRound(playerSelection, computerSelection);
+  result.textContent = playRound(playerSelection, computerSelection);
 });
 
 let startGameBtnPaper = document.querySelector("#paper");
 
 startGameBtnPaper.addEventListener("click", () => {
-    result.textContent = playRound(playerSelection, computerSelection);
+  result.textContent = playRound(playerSelection, computerSelection);
 });
 
 let startGameBtnScissors = document.querySelector("#scissors");
 
 startGameBtnScissors.addEventListener("click", () => {
-    result.textContent = playRound(playerSelection, computerSelection);
+  result.textContent = playRound(playerSelection, computerSelection);
 });
 
 // 2 event listeners on same thing
@@ -164,4 +199,12 @@ function fiveRoundGame() {
 
 // console.log(fiveRoundGame());
 
-let result = document.querySelector('.result');
+let result = document.querySelector(".result");
+
+let modalText = document.querySelector("#modal-text");
+let modal = document.querySelector("#modal-container");
+// if (playerScore == 5){
+//     modalText.textContent = "You win!";
+// } else if (computerScore == 5){
+//     modalText.textContent = "You lose!";
+// }
