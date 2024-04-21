@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -13,6 +14,38 @@
     </form>
 
     <p id="score"></p> -->
+    <div class="game-box">
+        <h1 class="title">
+            Rock, paper, scissors!
+        </h1>
+        <h2 class="subtitle">
+            pick your weapon!
+        </h2>
+        <div class="choices">
+            <button class="btn" id="rock">
+                rock
+            </button>
+            <button class="btn" id="paper">
+                paper
+            </button>
+            <button class="btn" id="scissors">
+                scissors
+            </button>
+        </div>
+        <div class="score">
+            <div class="player-score">
+                <p>your score:</p>
+                <p>0</p>
+            </div>
+            <div class="computer-score">
+                <p>computer score:</p>
+                <p>0</p>
+            </div>
+        </div>
+    </div>
+
+    
+
     <script src="script.js"></script>
 </body>
 </html>

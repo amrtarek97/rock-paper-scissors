@@ -1,0 +1,29 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'lato', sans-serif; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    /* padding-top: 50px; */
+}
+.choices{
+    padding: 30px;
+}
+.btn {
+    padding: 10px 20px;
+    margin: 0px 10px;
+
+}
